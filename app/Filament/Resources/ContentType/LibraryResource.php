@@ -19,7 +19,7 @@ class LibraryResource extends BaseResource
 
     protected static ?int $navigationSort = null;
 
-    protected static $parentPageKey = '1';
+    protected static $parentPageKey = '3';
 
     protected static string $subSlug = 'cms-library';
 

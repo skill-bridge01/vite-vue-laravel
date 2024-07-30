@@ -24,27 +24,18 @@ const libraryStore = useLibraryStore();
 const { data, isLoading, isLoaded, errors, getApi } = useLibrary();
 
 const loadInitialSettings = async () => {
-    // Get initial settings.
-    // Single request per page load, so no cache use needed.
     await getApi("library");
-
     if (data.value.loaded === true) {
-        // Initial settings loaded successfully, store them
-        // settingsStore.storeSettings(unref(data))
         console.log("success");
     }
 };
 
-// On App component mount load initial settings
-onBeforeMount(() => {});
 onMounted(() => {
     libraryStore.fetch();
     // loadInitialSettings();
     if (loading) {
         console.log("library123", librarys.value);
     }
-    // setTimeout
-
     updateItemsToShow();
     window.addEventListener("resize", updateItemsToShow);
 });

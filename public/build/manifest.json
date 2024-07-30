@@ -1,21 +1,28 @@
 {
-  "_HollowDotsSpinner-!~{00h}~.js": {
+  "_HollowDotsSpinner-!~{00m}~.js": {
     "file": "assets/HollowDotsSpinner-BkodSZL0.css",
-    "src": "_HollowDotsSpinner-!~{00h}~.js"
+    "src": "_HollowDotsSpinner-!~{00m}~.js"
   },
-  "_HollowDotsSpinner-5RQMQRg3.js": {
-    "file": "assets/HollowDotsSpinner-5RQMQRg3.js",
+  "_HollowDotsSpinner-HlbqBtLM.js": {
+    "file": "assets/HollowDotsSpinner-HlbqBtLM.js",
     "name": "HollowDotsSpinner",
     "imports": [
-      "_index-B_SCSNjl.js",
       "resources/js/app.js"
     ],
     "css": [
       "assets/HollowDotsSpinner-BkodSZL0.css"
     ]
   },
-  "_article-BNOuVCaJ.js": {
-    "file": "assets/article-BNOuVCaJ.js",
+  "_about-C0t9wU7v.js": {
+    "file": "assets/about-C0t9wU7v.js",
+    "name": "about",
+    "imports": [
+      "resources/js/app.js",
+      "_index-B_SCSNjl.js"
+    ]
+  },
+  "_article-BOt8ccuB.js": {
+    "file": "assets/article-BOt8ccuB.js",
     "name": "article",
     "imports": [
       "resources/js/app.js",
@@ -26,31 +33,59 @@
     "file": "assets/carousel-DyKY28tz.css",
     "src": "_carousel-!~{00d}~.js"
   },
-  "_detail-DUSsc1Aw.js": {
-    "file": "assets/detail-DUSsc1Aw.js",
+  "_contact-DKwo6wAu.js": {
+    "file": "assets/contact-DKwo6wAu.js",
+    "name": "contact",
+    "imports": [
+      "resources/js/app.js",
+      "_index-B_SCSNjl.js",
+      "_contact.service-fleXAEo-.js"
+    ]
+  },
+  "_contact.service-fleXAEo-.js": {
+    "file": "assets/contact.service-fleXAEo-.js",
+    "name": "contact.service",
+    "imports": [
+      "_index-B_SCSNjl.js"
+    ]
+  },
+  "_detail-B-Sm2DBL.js": {
+    "file": "assets/detail-B-Sm2DBL.js",
     "name": "detail",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_index-BIUDqRGO.js": {
-    "file": "assets/index-BIUDqRGO.js",
-    "name": "index"
+  "_faq-nkdhN9pV.js": {
+    "file": "assets/faq-nkdhN9pV.js",
+    "name": "faq",
+    "imports": [
+      "resources/js/app.js",
+      "_index-B_SCSNjl.js"
+    ]
   },
   "_index-B_SCSNjl.js": {
     "file": "assets/index-B_SCSNjl.js",
     "name": "index"
   },
-  "_library-tuwen4Ka.js": {
-    "file": "assets/library-tuwen4Ka.js",
+  "_library-Dang2X8C.js": {
+    "file": "assets/library-Dang2X8C.js",
     "name": "library",
     "imports": [
       "resources/js/app.js",
       "_index-B_SCSNjl.js"
     ]
   },
+  "_service-CyCB_wY4.js": {
+    "file": "assets/service-CyCB_wY4.js",
+    "name": "service",
+    "imports": [
+      "resources/js/app.js",
+      "_index-B_SCSNjl.js"
+    ]
+  },
   "resources/js/app.js": {
-    "file": "assets/app-D2FrC-Qp.js",
+    "file": "assets/app-DdxwakMc.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -68,16 +103,19 @@
       "resources/js/views/Pagination/index.vue"
     ],
     "css": [
-      "assets/app-Cj5cdC4O.css"
+      "assets/app-Dw8P4p7I.css"
     ]
   },
   "resources/js/layout/index.vue": {
-    "file": "assets/index-Dqz9UbQT.js",
+    "file": "assets/index-CZT_050c.js",
     "name": "index",
     "src": "resources/js/layout/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "resources/js/app.js"
+      "resources/js/app.js",
+      "_index-B_SCSNjl.js",
+      "_contact-DKwo6wAu.js",
+      "_contact.service-fleXAEo-.js"
     ],
     "css": [
       "assets/index-DNfHpMad.css",
@@ -85,26 +123,28 @@
     ]
   },
   "resources/js/views/About/index.vue": {
-    "file": "assets/index-D3nxg_cJ.js",
+    "file": "assets/index-CxTvM2i5.js",
     "name": "index",
     "src": "resources/js/views/About/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "resources/js/app.js"
+      "resources/js/app.js",
+      "_about-C0t9wU7v.js",
+      "_index-B_SCSNjl.js"
     ],
     "css": [
       "assets/index-BD4QdDfo.css"
     ]
   },
   "resources/js/views/Articles/components/Full.vue": {
-    "file": "assets/Full-nJINMWWF.js",
+    "file": "assets/Full-DnnZPu2C.js",
     "name": "Full",
     "src": "resources/js/views/Articles/components/Full.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_detail-DUSsc1Aw.js",
-      "_article-BNOuVCaJ.js",
+      "_detail-B-Sm2DBL.js",
+      "_article-BOt8ccuB.js",
       "_index-B_SCSNjl.js"
     ],
     "css": [
@@ -112,13 +152,13 @@
     ]
   },
   "resources/js/views/Articles/index.vue": {
-    "file": "assets/index-DcdpKfHk.js",
+    "file": "assets/index-CkTFOhtw.js",
     "name": "index",
     "src": "resources/js/views/Articles/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_article-BNOuVCaJ.js",
+      "_article-BOt8ccuB.js",
       "_index-B_SCSNjl.js"
     ],
     "css": [
@@ -127,27 +167,30 @@
     ]
   },
   "resources/js/views/Contact/index.vue": {
-    "file": "assets/index-2kCbCKca.js",
+    "file": "assets/index-BPFYDaps.js",
     "name": "index",
     "src": "resources/js/views/Contact/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_HollowDotsSpinner-5RQMQRg3.js",
-      "_index-B_SCSNjl.js"
+      "_HollowDotsSpinner-HlbqBtLM.js",
+      "_index-B_SCSNjl.js",
+      "_contact.service-fleXAEo-.js",
+      "_contact-DKwo6wAu.js"
     ],
     "css": [
       "assets/index-Dy6onL9X.css"
     ]
   },
   "resources/js/views/FAQ/index.vue": {
-    "file": "assets/index-D2LBYaTn.js",
+    "file": "assets/index-C-e7YSbr.js",
     "name": "index",
     "src": "resources/js/views/FAQ/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_index-BIUDqRGO.js"
+      "_faq-nkdhN9pV.js",
+      "_index-B_SCSNjl.js"
     ],
     "css": [
       "assets/index-ZdTmGpP0.css",
@@ -155,32 +198,35 @@
     ]
   },
   "resources/js/views/Home/index.vue": {
-    "file": "assets/index-BUQxl6q0.js",
+    "file": "assets/index-SUgu-h7H.js",
     "name": "index",
     "src": "resources/js/views/Home/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_library-tuwen4Ka.js",
-      "_article-BNOuVCaJ.js",
-      "_index-BIUDqRGO.js",
-      "_HollowDotsSpinner-5RQMQRg3.js",
-      "_index-B_SCSNjl.js"
+      "_service-CyCB_wY4.js",
+      "_library-Dang2X8C.js",
+      "_article-BOt8ccuB.js",
+      "_index-B_SCSNjl.js",
+      "_faq-nkdhN9pV.js",
+      "_about-C0t9wU7v.js",
+      "_HollowDotsSpinner-HlbqBtLM.js",
+      "_contact.service-fleXAEo-.js"
     ],
     "css": [
-      "assets/index-ePj56jjz.css",
+      "assets/index-DQj2sZn3.css",
       "assets/carousel-DyKY28tz.css"
     ]
   },
   "resources/js/views/Library/components/Details.vue": {
-    "file": "assets/Details-BIDUXWuV.js",
+    "file": "assets/Details-BAtQKfG6.js",
     "name": "Details",
     "src": "resources/js/views/Library/components/Details.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_library-tuwen4Ka.js",
+      "_library-Dang2X8C.js",
       "resources/js/app.js",
-      "_detail-DUSsc1Aw.js",
+      "_detail-B-Sm2DBL.js",
       "_index-B_SCSNjl.js"
     ],
     "css": [
@@ -188,14 +234,14 @@
     ]
   },
   "resources/js/views/Library/index.vue": {
-    "file": "assets/index-C4QLylZr.js",
+    "file": "assets/index-DxD1UVAl.js",
     "name": "index",
     "src": "resources/js/views/Library/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_detail-DUSsc1Aw.js",
-      "_library-tuwen4Ka.js",
+      "_detail-B-Sm2DBL.js",
+      "_library-Dang2X8C.js",
       "_index-B_SCSNjl.js"
     ],
     "css": [
@@ -204,7 +250,7 @@
     ]
   },
   "resources/js/views/Pagination/index.vue": {
-    "file": "assets/index-Dkb-XLYy.js",
+    "file": "assets/index-DIw-YI51.js",
     "name": "index",
     "src": "resources/js/views/Pagination/index.vue",
     "isDynamicEntry": true,
@@ -216,12 +262,14 @@
     ]
   },
   "resources/js/views/Services/index.vue": {
-    "file": "assets/index-DN7R6e0G.js",
+    "file": "assets/index-BpqMsMjD.js",
     "name": "index",
     "src": "resources/js/views/Services/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "resources/js/app.js"
+      "resources/js/app.js",
+      "_service-CyCB_wY4.js",
+      "_index-B_SCSNjl.js"
     ],
     "css": [
       "assets/index-BD4QdDfo.css",

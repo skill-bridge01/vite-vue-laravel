@@ -28,6 +28,6 @@ class LibraryIndex extends BaseTemplate implements CmsPageTemplate
 
     public static function getIndexPageKey()
     {
-        return '1';
+        return '3';
     }
 }

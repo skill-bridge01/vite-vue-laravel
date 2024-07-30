@@ -29,40 +29,46 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Installation
 
-1. Update and install composer packages
+1. Edit your config/database.php file to setup database connection
+
+2. Update and install composer packages
 ```
 composer update
 ```
-2. Copy .env.example to .env
+3. Copy .env.example to .env
 ```
 cp .env.example .env
 ```
-3. Generate keys
+4. Generate keys
 ```
 php artisan key:generate
 ```
-4. Edit your .env file to setup database connection and site address `APP_URL`
-5. Create database schema & seed it
+5. Edit your .env file to setup database connection and site address `APP_URL`
+6. Create database schema & seed it
 ```
 php artisan migrate:refresh --seed
 ```
-6. Create Filament's admin account(Name, Email, Password):
+7. Link public folder and storage folder. If the link already exists, first, remove the storage folder in public folder.
+```
+php artisan storage:link
+```
+8. Create Filament's admin account(Name, Email, Password):
 ```
 php artisan make:filament-user
 ```
-7. Start Filament's admin account:
+9. Start Filament's admin account:
 ```
 http://localhost:8000/admin
 ```
-8. Install all node.js dependencies
+10. Install all node.js dependencies
 ```
 npm install
 ```
-9. Run Vite dev server
+11. Run Vite dev server
 ```
 npm run dev
 ```
-10. Start Vue Frontend:
+12. Start Vue Frontend:
 ```
 http://localhost:8000
 ```

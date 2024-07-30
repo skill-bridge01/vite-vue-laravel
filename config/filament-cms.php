@@ -1,6 +1,6 @@
 <?php
 
-use App\Filament\Resources\CmsPageNavigationCategoryResource;
+// use App\Filament\Resources\CmsPageNavigationCategoryResource;
 use App\Filament\Resources\CmsPageResource;
 use App\Filament\Resources\CmsTagResource;
 use App\Http\Middleware\Localization;
@@ -46,19 +46,19 @@ return [
     'filament' => [
         'resources' => [
             'cms_page' => CmsPageResource::class,
-            'cms_page_navigation_category' => CmsPageNavigationCategoryResource::class,
+            // 'cms_page_navigation_category' => CmsPageNavigationCategoryResource::class,
             'cms_tag' => CmsTagResource::class,
         ],
         'navigation' => [
             'icon' => [
                 CmsPageResource::class => 'heroicon-o-document',
-                CmsPageNavigationCategoryResource::class => 'heroicon-o-bars-3-center-left',
+                // CmsPageNavigationCategoryResource::class => 'heroicon-o-bars-3-center-left',
                 CmsTagResource::class => 'heroicon-o-tag',
             ],
             'sort' => [
                 CmsPageResource::class => -10,
                 CmsTagResource::class => -9,
-                CmsPageNavigationCategoryResource::class => -8,
+                // CmsPageNavigationCategoryResource::class => -8,
             ],
         ],
         'recordTitleAttribute' => [

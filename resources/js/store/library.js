@@ -27,16 +27,13 @@ export const useLibraryStore = defineStore("library", {
         },
 
         fetch() {
-            console.log('lll');
             this.loading = true;
             libraryService
                 .getList()
                 .then((res) => {
-                    console.log("LIBRS_OK", res.data.librarys)
                     this.librarys = res.data.librarys;
                 })
                 .catch((err) => {
-                    console.log("LIBRS_ERR")
                     this.libraryFetchError = err;
                 })
                 .finally(() => {

@@ -1,0 +1,1 @@
+import{j as c}from"./app-DdxwakMc.js";import"./index-B_SCSNjl.js";import{c as o}from"./contact.service-fleXAEo-.js";const r=c("contact",{state:()=>({contact:[]}),actions:{fetch(){o.getList().then(t=>{this.contact=t.data.contact}).catch(t=>{console.log("LIBRS_ERR")}).finally(()=>{})}}});export{r as u};

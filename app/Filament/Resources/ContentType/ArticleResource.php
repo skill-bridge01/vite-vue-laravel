@@ -25,7 +25,7 @@ class ArticleResource extends BaseResource
 
     protected static ?int $navigationSort = null;
 
-    protected static $parentPageKey = '2';
+    protected static $parentPageKey = '4';
 
     protected static string $subSlug = 'cms-article';
 
@@ -55,12 +55,12 @@ class ArticleResource extends BaseResource
                         'reviewing' => 'warning',
                         'published' => 'success',
                         'rejected' => 'danger',
-                    })
-                    ->formatStateUsing([
-                        'draft' => 'Draft',
-                        'reviewing' => 'Reviewing',
-                        'published' => 'Published',
-                    ]),
+                    }),
+                    // ->formatStateUsing([
+                    //     'draft' => 'Draft',
+                    //     'reviewing' => 'Reviewing',
+                    //     'published' => 'Published',
+                    // ]),
                 // TextColumn::make('live?'),
                 TextColumn::make('created_at')->dateTime()
                      ->sortable(),

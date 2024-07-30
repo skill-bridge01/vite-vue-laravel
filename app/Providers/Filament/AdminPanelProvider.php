@@ -38,7 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->plugin(SpatieLaravelTranslatablePlugin::make()->defaultLocales(config('filament-cms.locales')))
-            ->plugin(FilamentCmsPanel::make())
+            // ->plugin(FilamentCmsPanel::make())
             ->plugin(FilamentShieldPlugin::make())
             ->globalSearch(false)
             ->login(Login::class)

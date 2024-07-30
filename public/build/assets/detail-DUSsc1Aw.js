@@ -1,1 +1,0 @@
-import{K as l}from"./app-D2FrC-Qp.js";const r=l("detail",{state:()=>({selectedLibrary:null,librarySelected:!1,pieceFetchError:null,loading:!1}),actions:{clear(){this.selectedLibrary=null,this.librarySelected=!1,this.loading=!1},setSelectedLibrary(e){console.log(e),this.selectedLibrary=e,e?this.librarySelected=!0:this.librarySelected=!1}}});export{r as u};

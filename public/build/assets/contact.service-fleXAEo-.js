@@ -1,0 +1,1 @@
+var s=Object.defineProperty;var i=(e,t,r)=>t in e?s(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r;var a=(e,t,r)=>i(e,typeof t!="symbol"?t+"":t,r);import{h as c}from"./index-B_SCSNjl.js";class n{constructor(){a(this,"apiUrl","/send-email")}sendEmail(t){return c.post(this.apiUrl,{value:t})}getList(){return c.get("/contact")}}const l=new n;export{l as c};

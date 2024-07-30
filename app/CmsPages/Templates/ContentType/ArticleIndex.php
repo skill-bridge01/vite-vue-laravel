@@ -20,6 +20,6 @@ class ArticleIndex extends BaseTemplate implements CmsPageTemplate
 
     public static function getIndexPageKey()
     {
-        return '2';
+        return '4';
     }
 }

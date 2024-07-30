@@ -2,6 +2,7 @@
 import { ref, onBeforeMount, onMounted, onUnmounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useArticleStore } from "@/store/article";
+import { useHomeStore } from "@/store/home";
 // import useLibrary from "@/use/useLibrary";
 import { useI18n } from "vue-i18n";
 import { Carousel, Navigation, Slide } from "vue3-carousel";
@@ -21,8 +22,10 @@ function updateItemsToShow() {
 
 const { articles } = storeToRefs(useArticleStore());
 const articleStore = useArticleStore();
-
+const homeStore = useHomeStore();
+const { home } = storeToRefs(useHomeStore());
 onBeforeMount(() => {
+    homeStore.fetch();
     articleStore.fetch();
     updateItemsToShow();
     window.addEventListener("resize", updateItemsToShow);
@@ -70,11 +73,26 @@ const { t, locale } = useI18n();
             </router-link>
         </div>
         <div class="pt-8 flex gap-10">
-            <p
+            <div
+                v-if="home && home.length > 0"
+                class="w-1/4 font-semibold text-xl text-[#313131] flex items-center text-start"
+            >
+                <!-- Using v-html directive to render HTML content safely -->
+                <div v-html="home[0].data[locale].article"></div>
+            </div>
+            <!-- <div v-if="home">
+                <div v-if="home[0]">
+                    <p
+                        v-html="home[0].data[locale].article"
+                        class="text-xl font-semibold text-[#313131] flex items-center text-start"
+                    />
+                </div>
+            </div> -->
+            <!-- <p
                 class="text-xl font-semibold text-[#313131] w-1/4 flex items-center text-start"
             >
                 {{ t("articles.content") }}
-            </p>
+            </p> -->
             <div class="w-3/4" v-if="articles">
                 <Carousel :itemsToShow="itemsToShow" :wrapAround="true">
                     <Slide v-for="(slide, index) in articles" :key="index">

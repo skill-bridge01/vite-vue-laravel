@@ -23,9 +23,7 @@ const props = defineProps({
       <p class="text-[#FF2400] text-sm font-semibold pb-4">
         {{ props.title }}
       </p>
-      <p class="text-[#858585] text-xs font-normal">
-        {{ props.content }}
-      </p>
+      <p class="text-[#858585] text-xs font-normal" v-html="props.content" />
     </div>
   </div>
 </template>

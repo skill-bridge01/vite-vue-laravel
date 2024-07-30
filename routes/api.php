@@ -2,6 +2,12 @@
 use App\EndPoints\Library\GetLibraryAction;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FooterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Mail\MyEmail;
@@ -18,6 +24,13 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home-about', [HomeController::class, 'about']);
+Route::get('/service', [ServiceController::class, 'index']);
+Route::get('/faq', [FaqController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/footer', [FooterController::class, 'index']);
 Route::get('/library', [LibraryController::class, 'index']);
 // Route::get('/library', GetLibraryAction::class);
 Route::get('/library/{slug}', [LibraryController::class, 'show']);

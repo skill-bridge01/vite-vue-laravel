@@ -1,12 +1,14 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref, computed } from "vue";
+import { ref,onMounted, computed } from "vue";
 import { Form } from "vee-validate";
 import BaseInput from "@/components/BaseInput.vue";
 import { contactService } from "@/services";
 import BaseTextarea from "@/components/BaseTextarea.vue";
 import ContactCard from "@/components/ContactCard.vue";
 import { HollowDotsSpinner } from "epic-spinners";
+import { storeToRefs } from "pinia";
+import { useContactStore } from "@/store/contact";
 
 import * as Yup from "yup";
 const schema = Yup.object().shape({
@@ -14,6 +16,13 @@ const schema = Yup.object().shape({
     email: Yup.string().email().required(),
     message: Yup.string().min(6).required(),
 });
+
+const contactStore = useContactStore();
+const { contact } = storeToRefs(useContactStore());
+onMounted(() => {
+    
+});
+
 const showAnimator = ref(false);
 const errorMessage = ref(null);
 const successMessage = ref(null);
@@ -94,7 +103,6 @@ const { t, locale } = useI18n();
                 ></div>
             </div>
         </div>
-
         <div class="pt-16 px-24">
             <div class="relative text-center group block">
                 <img
@@ -109,15 +117,30 @@ const { t, locale } = useI18n();
                         background: rgba(69, 49, 93, 0.4902);
                     "
                 ></div>
-                <div class="bottom w-full">
+                <div v-if="contact && contact.length > 0" class="bottom w-full">
                     <div class="grid grid-cols-3 gap-10">
-                        <div v-for="contact in contacts" :key="contact.id">
+                        <contact-card
+                            src="/images/contact/email2.png"
+                            :title="t('contact.email.title')"
+                            :info="contact[0].data[locale].email"
+                        />
+                        <contact-card
+                            src="/images/contact/phone2.png"
+                            :title="t('contact.phone')"
+                            :info="contact[0].data[locale].phone"
+                        />
+                        <contact-card
+                            src="/images/contact/hour2.png"
+                            :title="t('contact.hour.title')"
+                            :info="contact[0].data[locale].time"
+                        />
+                        <!-- <div v-for="contact in contacts" :key="contact.id">
                             <contact-card
                                 :src="contact.src"
                                 :title="contact.title"
                                 :info="contact.info"
                             />
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -153,7 +176,7 @@ const { t, locale } = useI18n();
                         {{ t("contact.stayInTouch") }}
                     </p>
                     <p class="text-[#6E6E6E] text-lg font-normal">
-                        {{ t("contact.sample") }}
+                        <!-- {{ t("contact.sample") }} -->
                     </p>
                 </div>
             </div>

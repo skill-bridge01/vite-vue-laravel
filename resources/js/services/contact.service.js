@@ -7,6 +7,9 @@ class ContactService {
             value,
         });
     }
+    getList() {
+        return http.get("/contact");
+    }
     
 }
 
