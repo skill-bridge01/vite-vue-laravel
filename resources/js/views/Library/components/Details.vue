@@ -29,7 +29,7 @@ onMounted(() => {
 });
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto px-24">
+    <div class="max-w-[1440px] mx-auto xl:px-24 lg:px-16 px-6">
         <div class="pt-12">
             <div class="relative">
                 <p
@@ -61,7 +61,7 @@ onMounted(() => {
         <p class="pt-11 pb-5 text-[#45315D] font-bold text-lg text-start">
             {{ t("library.details.suggestedBlog") }}
         </p>
-        <div class="grid grid-cols-3 gap-10 pb-16">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10 pb-16">
             <div v-for="library in librarys" :key="library.id">
                 <div v-if="library.title[locale]">
                     <blog-card

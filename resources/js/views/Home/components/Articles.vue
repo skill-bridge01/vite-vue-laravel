@@ -15,8 +15,16 @@ function updateItemsToShow() {
     if (width >= 1280) {
         // Example breakpoint for "lg"
         itemsToShow.value = 2.5;
-    } else {
+    } else if (width >= 1024) {
         itemsToShow.value = 2.2;
+    } else if (width >= 768) {
+        itemsToShow.value = 2.5;
+    } else if (width >= 640) {
+        itemsToShow.value = 2;
+    } else if(width >= 550) {
+        itemsToShow.value = 1.5;
+    } else  {
+        itemsToShow.value = 1;
     }
 }
 
@@ -46,7 +54,7 @@ const handleClickDetails = (slug) => {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto px-16">
+    <div class="max-w-[1440px] mx-auto lg:px-16 px-6">
         <div class="pt-36">
             <div class="relative">
                 <p
@@ -72,10 +80,10 @@ const { t, locale } = useI18n();
                 </p>
             </router-link>
         </div>
-        <div class="pt-8 flex gap-10">
+        <div class="pt-8 lg:flex gap-10">
             <div
                 v-if="home && home.length > 0"
-                class="w-1/4 font-semibold text-xl text-[#313131] flex items-center text-start"
+                class="lg:w-1/4 font-semibold text-xl text-[#313131] flex items-center text-start"
             >
                 <!-- Using v-html directive to render HTML content safely -->
                 <div v-html="home[0].data[locale].article"></div>
@@ -93,7 +101,7 @@ const { t, locale } = useI18n();
             >
                 {{ t("articles.content") }}
             </p> -->
-            <div class="w-3/4" v-if="articles">
+            <div class="lg:w-3/4" v-if="articles">
                 <Carousel :itemsToShow="itemsToShow" :wrapAround="true">
                     <Slide v-for="(slide, index) in articles" :key="index">
                         <div v-if="slide.title[locale]">
@@ -160,18 +168,36 @@ const { t, locale } = useI18n();
                     <template #addons>
                         <navigation>
                             <template #next>
+                                <div class="lg:block hidden">
+                                    <img
+                                        :class="[
+                                            '',
+                                            locale === 'en'
+                                                ? 'block'
+                                                : 'hidden',
+                                        ]"
+                                        src="/images/home/carousel-arrow-r.svg"
+                                    />
+                                </div>
                                 <img
-                                    :class="[
-                                        locale === 'en' ? 'block' : 'hidden',
-                                    ]"
+                                    class="lg:hidden block"
                                     src="/images/home/carousel-arrow-r.svg"
                                 />
                             </template>
                             <template #prev>
+                                <div class="lg:block hidden">
+                                    <img
+                                        :class="[
+                                            '',
+                                            locale === 'en'
+                                                ? 'hidden'
+                                                : 'block',
+                                        ]"
+                                        src="/images/home/carousel-arrow-l.svg"
+                                    />
+                                </div>
                                 <img
-                                    :class="[
-                                        locale === 'en' ? 'hidden' : 'block',
-                                    ]"
+                                    class="lg:hidden block"
                                     src="/images/home/carousel-arrow-l.svg"
                                 />
                             </template>

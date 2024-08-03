@@ -33,10 +33,11 @@ const props = defineProps({
 </script>
 <template>
     <div
-        class="text-start flex items-center gap-6 ltr:pr-8 rtl:pl-8 shadow-library rounded-normal"
+        class="flex-col sm:flex-row text-start flex sm:items-center items-start sm:gap-6 gap-0 sm:ltr:pr-8 sm:rtl:pl-8 shadow-library rounded-normal"
     >
-        <img :src="props.src" />
-        <div>
+        <img :src="props.src" class="hidden sm:block"/>
+        <img :src="props.src" class="sm:hidden flex w-full"/>
+        <div class="px-4 sm:px-0 py-3 text-start">
             <p class="text-[#45315D] text-lg font-bold pb-2">
                 {{ props.title }}
             </p>

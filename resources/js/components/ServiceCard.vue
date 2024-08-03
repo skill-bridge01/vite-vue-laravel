@@ -15,8 +15,8 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="text-start pt-5 pb-12 pr-12 rtl:pr-8 pl-8 rtl:pl-12">
-    <img class="pb-3" :src="props.src" />
+  <div class="text-start pt-5 pb-12 md:pr-12 md:rtl:pr-8 md:pl-8 md:rtl:pl-12 sm:px-8">
+    <img class="pb-3 flex w-full justify-center" :src="props.src" />
 
     <p class="text-[#45315D] text-base font-bold pb-3">
       {{ props.title }}

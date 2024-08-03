@@ -10,13 +10,12 @@ const serviceStore = useServiceStore();
 const { services } = storeToRefs(useServiceStore());
 onMounted(() => {
     serviceStore.fetch();
-    // console.log("library123", librarys.value);
 });
 
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto px-24">
+    <div class="max-w-[1440px] mx-auto xl:px-24 lg:px-16 px-6">
         <div class="pt-12">
             <div class="relative">
                 <p
@@ -35,7 +34,7 @@ const { t, locale } = useI18n();
                 ></div>
             </div>
         </div>
-        <div v-if="services" class="pt-16 pb-16 grid grid-cols-3">
+        <div v-if="services" class="pt-16 pb-16 grid lg:grid-cols-3 md:grid-cols-2">
             <div v-for="(service, index) in services" :key="index">
                 <div v-if="service.title[locale]">
                     <service-card

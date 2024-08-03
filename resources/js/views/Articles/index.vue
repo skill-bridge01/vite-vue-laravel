@@ -39,7 +39,7 @@ const itemsPaginated = computed(() => {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto px-24">
+    <div class="max-w-[1440px] mx-auto xl:px-24 lg:px-16 px-6">
         <div class="pt-12">
             <div class="relative">
                 <p
@@ -59,7 +59,7 @@ const { t, locale } = useI18n();
             </div>
         </div>
         <div class="flex flex-col gap-10">
-            <div class="pt-20 grid grid-cols-4 gap-4">
+            <div class="pt-20 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
                 <div
                     v-for="article in itemsPaginated"
                     :key="article.id"

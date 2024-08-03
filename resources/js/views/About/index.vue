@@ -11,7 +11,7 @@ onMounted(() => {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto px-24">
+    <div class="max-w-[1440px] mx-auto xl:px-24 lg:px-16 px-6">
         <div class="pt-12">
             <div class="relative">
                 <p
@@ -32,7 +32,8 @@ const { t, locale } = useI18n();
         </div>
         <div v-if="about">
             <div class="pt-16 pb-5" v-if="about[0]?.title">
-                <div class="flex items-center gap-24 justify-between">
+                <div class="flex md:items-center items-start lg:gap-24 md:gap-14 gap-8 md:px-0 xs:px-5 px-0 justify-between md:flex-row flex-col">
+                    <img :src="'/storage/' + about[0].seo.image" class="md:hidden flex w-full" />
                     <div class="text-start">
                         <div class="flex text-start gap-11 pb-11 items-center">
                             <img src="/images/about/bar.svg" />
@@ -52,12 +53,14 @@ const { t, locale } = useI18n();
                             class="text-xl text-[#403D3D] font-normal"
                         /> -->
                     </div>
-                    <img :src="'/storage/' + about[0].seo.image" />
+                    <img :src="'/storage/' + about[0].seo.image" class="lg:block hidden" />
+                    <img :src="'/storage/' + about[0].seo.image" class="lg:hidden md:flex w-full hidden" />
                 </div>
             </div>
-            <div class="pb-40" v-if="about[1]?.title">
-                <div class="flex items-center gap-24 justify-between">
-                    <img src="/images/about/2.svg" />
+            <div class="pb-40 pt-5" v-if="about[1]?.title">
+                <div class="flex md:items-center items-start lg:gap-24 md:gap-14 gap-8 md:px-0 xs:px-5 px-0 justify-between md:flex-row flex-col">
+                    <img :src="'/storage/' + about[1].seo.image" class="lg:block hidden" />
+                    <img :src="'/storage/' + about[1].seo.image" class="lg:hidden md:block flex w-full" />
                     <div class="text-start">
                         <div class="flex text-start gap-11 pb-11 items-center">
                             <img src="/images/about/bar.svg" />

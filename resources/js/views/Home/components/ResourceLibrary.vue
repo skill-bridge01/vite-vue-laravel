@@ -13,15 +13,23 @@ function updateItemsToShow() {
     if (width >= 1280) {
         // Example breakpoint for "lg"
         itemsToShow.value = 3.5;
-    } else {
+    } else if(width >= 1024) {
         itemsToShow.value = 3;
+    } else if(width >= 768) {
+        itemsToShow.value = 2.5;
+    } else if(width >= 640) {
+        itemsToShow.value = 2;
+    } else if(width >= 550) {
+        itemsToShow.value = 1.5;
+    } else  {
+        itemsToShow.value = 1;
     }
 }
 
 // Api composable
-const { librarys, selectedLibrary, loading } = storeToRefs(useLibraryStore());
+const { librarys, loading } = storeToRefs(useLibraryStore());
 const libraryStore = useLibraryStore();
-const { data, isLoading, isLoaded, errors, getApi } = useLibrary();
+const { data, getApi } = useLibrary();
 
 const loadInitialSettings = async () => {
     await getApi("library");
@@ -63,16 +71,10 @@ const slides = ref([
 ]);
 const slide = ref("");
 const { t, locale } = useI18n();
-const localizedContent = computed(() => {
-    return slide.data[locale.value].content;
-});
-// console.log("librarys", librarys.value);
-const localizedTitle = computed(() => {
-    return slide.title[locale.value];
-});
+
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto px-16">
+    <div class="max-w-[1440px] mx-auto lg:px-16 px-6">
         <div class="pt-32">
             <div class="relative">
                 <p

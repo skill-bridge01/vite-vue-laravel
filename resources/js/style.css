@@ -34,6 +34,14 @@ textarea:active {
   box-shadow: 0 0 0 80px #f6f6f6 inset !important;
 }
 
+select:not([data-type="home"]),
+select:not([type="home"]):focus,
+select:not([type="home"]):active {
+    /* border: none; */
+    -webkit-transition-delay: 9999s;
+    transition-delay: 9999s;
+}
+
 :root {
   font-family: "Cairo", sans-serif;
   line-height: 1.5;
@@ -57,9 +65,13 @@ a:hover {
   color: #ffffff;
   font-size: 16px;
 }
-.router-link-exact-active {
+/* .router-link-exact-active {
   font-weight: 700;
   color: #ffffff;
+  font-size: 16px;
+} */
+.router-link-exact-active {
+  font-weight: 700;
   font-size: 16px;
 }
 

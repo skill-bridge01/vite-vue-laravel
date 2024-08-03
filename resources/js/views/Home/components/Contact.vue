@@ -76,7 +76,7 @@ const { t, locale } = useI18n();
                 />
             </div>
         </div>
-        <div class="px-16">
+        <div class="lg:px-16 px-6">
             <div class="relative">
                 <p
                     class="absolute ltr:left-8 rtl:right-8 top-[3px] text-2xl font-bold text-[#45315D] z-10"
@@ -94,10 +94,10 @@ const { t, locale } = useI18n();
                 ></div>
             </div>
         </div>
-        <div class="pt-20 px-16">
-            <div class="grid grid-cols-2 gap-10 items-center">
+        <div class="pt-20 lg:px-16 px-6">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
                 <Form
-                    class="bg-white text-start shadow-form rounded-[10px] pt-[52px] pb-11 px-10"
+                    class="bg-white text-start shadow-form rounded-[10px] pt-[52px] pb-11 sm:px-10 px-5"
                     @submit="onSubmit"
                     :validation-schema="schema"
                     id="MailSender"
@@ -177,7 +177,7 @@ const { t, locale } = useI18n();
                         />
                     </div>
                 </Form>
-                <img
+                <img class="hidden md:block"
                     :src="[
                         locale === 'en'
                             ? '/images/home/contact-l.svg'

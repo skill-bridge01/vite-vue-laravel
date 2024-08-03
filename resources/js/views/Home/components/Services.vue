@@ -31,7 +31,7 @@ const breakpoints = {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto pt-24 px-16">
+    <div class="max-w-[1440px] mx-auto pt-24 lg:px-16 px-6">
         <div>
             <div class="relative">
                 <p
@@ -64,8 +64,8 @@ const { t, locale } = useI18n();
             >
                 <Slide v-for="service in services" :key="service">
                     <div v-if="service.title[locale]" class="w-full">
-                        <div class="grid grid-cols-3" v-if="locale === 'en'">
-                            <div class="col-span-1">
+                        <div class="lg:grid lg:grid-cols-3" v-if="locale === 'en'">
+                            <div class="lg:col-span-1">
                                 <div class="flex w-full justify-start">
                                     <div
                                         class="pt-16 pb-9 flex items-center gap-8"
@@ -83,23 +83,23 @@ const { t, locale } = useI18n();
                                     class="text-[#4B4B4B] text-start text-base font-semibold max-w-lg px-8"
                                 />
                             </div>
-                            <div class="col-span-1"></div>
-                            <div class="flex w-full justify-end">
+                            <div class="lg:col-span-1"></div>
+                            <div class="flex w-full lg:justify-end  justify-center lg:col-span-1 mt-5 lg:mt-0">
                                 <img
                                     :src="'/storage/' + service.seo.image"
                                     class="col-span-1"
                                 />
                             </div>
                         </div>
-                        <div class="grid grid-cols-3" v-if="locale === 'ar'">
-                            <div class="flex w-full justify-start">
+                        <div class="lg:grid lg:grid-cols-3" v-if="locale === 'ar'">
+                            <div class="lg:col-span-1 flex w-full lg:justify-start justify-center">
                                 <img
                                     :src="'/storage/' + service.seo.image"
                                     class="col-span-1"
                                 />
                             </div>
-                            <div class="col-span-1"></div>
-                            <div class="col-span-1">
+                            <div class="lg:col-span-1"></div>
+                            <div class="lg:col-span-1">
                                 <div class="flex w-full justify-end">
                                     <div
                                         class="pt-16 pb-9 flex items-center gap-8"
@@ -114,7 +114,7 @@ const { t, locale } = useI18n();
                                 </div>
                                 <p
                                     v-html="service.data[locale].content"
-                                    class="text-[#4B4B4B] text-start text-base font-semibold max-w-lg px-8"
+                                    class="text-[#4B4B4B] flex w-full justify-end text-start text-base font-semibold lg:max-w-lg lg:px-8"
                                 />
                             </div>
                         </div>

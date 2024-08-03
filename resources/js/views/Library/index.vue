@@ -39,50 +39,9 @@ const librarys1 = ref([
     {
         id: 1,
         title: computed(() => t("library.title")),
-        content1: computed(() => t("library.content1")),
-        content2: computed(() => t("library.content2")),
+        content: computed(() => t("library.content2")),
         readMore: computed(() => t("library.readMore")),
         src: "/images/library/1.svg",
-    },
-    {
-        id: 2,
-        title: computed(() => t("library.title")),
-        content1: computed(() => t("library.content1")),
-        content2: computed(() => t("library.content2")),
-        readMore: computed(() => t("library.readMore")),
-        src: "/images/library/2.svg",
-    },
-    {
-        id: 3,
-        title: computed(() => t("library.title")),
-        content1: computed(() => t("library.content1")),
-        content2: computed(() => t("library.content2")),
-        readMore: computed(() => t("library.readMore")),
-        src: "/images/library/3.svg",
-    },
-    {
-        id: 4,
-        title: computed(() => t("library.title")),
-        content1: computed(() => t("library.content1")),
-        content2: computed(() => t("library.content2")),
-        readMore: computed(() => t("library.readMore")),
-        src: "/images/library/4.svg",
-    },
-    {
-        id: 5,
-        title: computed(() => t("library.title")),
-        content1: computed(() => t("library.content1")),
-        content2: computed(() => t("library.content2")),
-        readMore: computed(() => t("library.readMore")),
-        src: "/images/library/1.svg",
-    },
-    {
-        id: 6,
-        title: computed(() => t("library.title")),
-        content1: computed(() => t("library.content1")),
-        content2: computed(() => t("library.content2")),
-        readMore: computed(() => t("library.readMore")),
-        src: "/images/library/2.svg",
     },
 ]);
 
@@ -111,7 +70,7 @@ const itemsPaginated = computed(() => {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto px-24">
+    <div class="max-w-[1440px] mx-auto xl:px-24 lg:px-16 px-6">
         <div class="pt-12">
             <div class="relative">
                 <p
@@ -131,7 +90,7 @@ const { t, locale } = useI18n();
             </div>
         </div>
 
-        <div class="pt-20 flex flex-col gap-12" v-if="itemsPaginated">
+        <div class="pt-20 flex flex-col sm:gap-12 gap-6" v-if="itemsPaginated">
             <div v-for="library in itemsPaginated" :key="library.id">
                 <div v-if="library.title[locale]">
                     <library-card

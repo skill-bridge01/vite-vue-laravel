@@ -22,7 +22,7 @@ onMounted(() => {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="mb-32">
+    <div class="mb-32 ">
         <div class="relative  pt-9">
             <div class="max-w-[1440px] mx-auto">
                 <!-- <div
@@ -44,7 +44,7 @@ const { t, locale } = useI18n();
                 </div> -->
                 <div
                     v-if="home"
-                    class="pt-14 xl:px-24 px-10 xl:gap-28 gap-14 flex items-center justify-between"
+                    class="pt-14 xl:px-24 lg:px-10 px-6 xl:gap-28 gap-14 flex-col lg:flex-row flex items-center justify-between"
                 >
                     <div class="" v-if="home[0]">
                         <h1

@@ -18,8 +18,8 @@ onMounted(() => {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto">
-        <div class="pt-32 px-16">
+    <div class="max-w-[1440px] mx-auto ">
+        <div class="pt-32 lg:px-16 px-6">
             <div class="relative">
                 <p
                     class="absolute ltr:left-8 rtl:right-8 top-[3px] text-2xl font-bold text-[#45315D] z-10"
@@ -47,17 +47,17 @@ const { t, locale } = useI18n();
         <div class="pt-12" >
             <div class="relative">
                 <img
-                    class="absolute left-0 ltr:hidden"
+                    class="md:absolute md:block hidden md:left-0 md:ltr:hidden"
                     src="/images/home/screw-arrow-r.svg"
                 />
                 <img
-                    class="absolute right-0 rtl:hidden"
+                    class="md:absolute md:block hidden md:right-0 md:rtl:hidden"
                     src="/images/home/screw-arrow-l.svg"
                 />
 
                 <div
                     v-if="home && home.length > 0"
-                    class="text-[#403D3D] font-normal text-[20px] text-start pl-16 rtl:pl-44 pr-44 rtl:pr-16"
+                    class="text-[#403D3D] font-normal text-[20px] text-start md:pl-16 md:rtl:pl-44 md:pr-44 md:rtl:pr-16 px-6"
                 >
                     <!-- Using v-html directive to render HTML content safely -->
                     <div v-html="home[0].data[locale].about"></div>
@@ -68,8 +68,8 @@ const { t, locale } = useI18n();
                     {{ t("about.content") }}
                 </p> -->
             </div>
-            <div class="pt-16 pl-16 rtl:pl-32 pr-32 rtl:pr-16 pb-[70px]">
-                <div class="grid grid-cols-3 gap-11" v-if="homeAbout">
+            <div class="lg:pt-16 pt-6 sm:pl-16 lg:rtl:pl-32 lg:pr-32 sm:pr-16 sm:rtl:pr-16 pb-[70px] px-6">
+                <div class="grid xl:grid-cols-3 md:grid-cols-2 xl:gap-11 sm:gap-6 gap-3" v-if="homeAbout">
                     <div v-if="homeAbout[0]">
                         <card-box
                             :title="homeAbout[0].title[locale]"
@@ -84,7 +84,7 @@ const { t, locale } = useI18n();
                             :src="'/storage/' + homeAbout[1].seo.image"
                         />
                     </div>
-                    <div v-if="homeAbout[2]">
+                    <div v-if="homeAbout[2]" class="xl:block hidden">
                         <card-box
                             :title="homeAbout[2].title[locale]"
                             :content="homeAbout[2].data[locale].content"
@@ -92,7 +92,14 @@ const { t, locale } = useI18n();
                         />
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-6 pt-6" v-if="homeAbout">
+                <div class="grid md:grid-cols-2 sm:gap-6 gap-3 sm:pt-6 pt-3" v-if="homeAbout">
+                    <div v-if="homeAbout[2]" class="xl:hidden block">
+                        <card-box
+                            :title="homeAbout[2].title[locale]"
+                            :content="homeAbout[2].data[locale].content"
+                            :src="'/storage/' + homeAbout[2].seo.image"
+                        />
+                    </div>
                     <div v-if="homeAbout[3]">
                         <card-box
                             :title="homeAbout[3].title[locale]"

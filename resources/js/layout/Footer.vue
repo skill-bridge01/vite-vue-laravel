@@ -24,9 +24,9 @@ onMounted(() => {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="overflow-visible footer-background bg-no-repeat px-24 pb-2">
+    <div class="overflow-visible bg-[#57456D] lg:bg-[url('/images/home/footer.svg')] lg:bg-white bg-cover bg-no-repeat lg:px-24 xs:px-16 px-8 pb-2">
         <div class="flex justify-end">
-            <div class="flex gap-[10px] pt-16 z-10 pb-9">
+            <div class="flex gap-[10px] lg:pt-16 pt-8 z-10 pb-9">
                 <img src="/images/home/facebook-icon.svg" />
                 <img src="/images/home/twitter-icon.svg" />
                 <img src="/images/home/instagram-icon.svg" />
@@ -34,7 +34,7 @@ const { t, locale } = useI18n();
             </div>
         </div>
         <hr />
-        <div class="py-4 grid grid-cols-4 text-start text-white gap-24">
+        <div class="py-4 grid lg:grid-cols-4 sm:grid-cols-2 text-start text-white xl:gap-24 gap-10">
             <div class="text-xl font-semibold">
                 <p class="pb-3">{{ t("footer.aboutUs.title") }}</p>
                 <div v-if="footer">

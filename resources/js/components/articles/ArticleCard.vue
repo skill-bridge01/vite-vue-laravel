@@ -88,8 +88,9 @@ const getTime = (time) => {
 };
 </script>
 <template>
-    <div class="rounded-normal shadow-article">
-        <img :src="props.src" />
+    <div class="rounded-normal shadow-article sm:mx-0 xs:mx-5 mx-0">
+        <!-- <img :src="props.src" class="hidden md:block"/> -->
+        <img :src="props.src" class="flex w-full" />
         <div class="px-3 pt-1 pb-8 text-start">
             <div class="text-start">
                 <p class="text-[#9367C7] text-sm font-bold">

@@ -47,7 +47,7 @@ onUnmounted(() => {
 const { t, locale } = useI18n();
 </script>
 <template>
-    <div class="max-w-[1440px] mx-auto px-16">
+    <div class="max-w-[1440px] mx-auto lg:px-16 px-6">
         <div class="pt-36">
             <div class="relative">
                 <p
@@ -65,7 +65,7 @@ const { t, locale } = useI18n();
                     ]"
                 ></div>
             </div>
-            <router-link to="/faq">
+            <router-link to="/faq" class="xs:block hidden">
                 <p
                     class="text-[#45315D] font-semibold text-base text-end underline"
                 >

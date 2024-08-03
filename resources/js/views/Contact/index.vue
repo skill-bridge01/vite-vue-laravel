@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref,onMounted, computed } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { Form } from "vee-validate";
 import BaseInput from "@/components/BaseInput.vue";
 import { contactService } from "@/services";
@@ -19,9 +19,7 @@ const schema = Yup.object().shape({
 
 const contactStore = useContactStore();
 const { contact } = storeToRefs(useContactStore());
-onMounted(() => {
-    
-});
+onMounted(() => {});
 
 const showAnimator = ref(false);
 const errorMessage = ref(null);
@@ -85,7 +83,7 @@ const { t, locale } = useI18n();
 </script>
 <template>
     <div class="max-w-[1440px] mx-auto">
-        <div class="pt-12 px-24">
+        <div class="pt-12 xl:px-24 lg:px-16 px-6">
             <div class="relative">
                 <p
                     class="absolute ltr:left-8 rtl:right-8 top-[3px] text-2xl font-bold text-[#45315D] z-10"
@@ -103,7 +101,7 @@ const { t, locale } = useI18n();
                 ></div>
             </div>
         </div>
-        <div class="pt-16 px-24">
+        <div class="pt-16 xl:px-24 lg:px-16 px-6">
             <div class="relative text-center group block">
                 <img
                     src="/images/contact/main.svg"
@@ -118,7 +116,7 @@ const { t, locale } = useI18n();
                     "
                 ></div>
                 <div v-if="contact && contact.length > 0" class="bottom w-full">
-                    <div class="grid grid-cols-3 gap-10">
+                    <div class="md:grid grid-cols-3 lg:gap-10 md:gap-5 hidden">
                         <contact-card
                             src="/images/contact/email2.png"
                             :title="t('contact.email.title')"
@@ -144,6 +142,25 @@ const { t, locale } = useI18n();
                     </div>
                 </div>
             </div>
+            <div v-if="contact && contact.length > 0" class="w-full">
+                <div class="mt-3 md:hidden flex flex-col gap-3">
+                    <contact-card
+                        src="/images/contact/email.png"
+                        :title="t('contact.email.title')"
+                        :info="contact[0].data[locale].email"
+                    />
+                    <contact-card
+                        src="/images/contact/phone.png"
+                        :title="t('contact.phone')"
+                        :info="contact[0].data[locale].phone"
+                    />
+                    <contact-card
+                        src="/images/contact/hour.png"
+                        :title="t('contact.hour.title')"
+                        :info="contact[0].data[locale].time"
+                    />
+                </div>
+            </div>
         </div>
 
         <div class="mt-60 relative mx-10 hidden">
@@ -166,11 +183,11 @@ const { t, locale } = useI18n();
         </div>
         <div
             :class="
-                'mt-60 ' +
+                'md:mt-60 mt-20 ' +
                 (locale === 'en' ? 'envelop-en-left-bg' : 'envelop-ar-right-bg')
             "
         >
-            <div class="px-24">
+            <div class="xl:px-24 lg:px-16 px-6">
                 <div class="text-start">
                     <p class="text-xl font-bold text-[#45315D] pb-2">
                         {{ t("contact.stayInTouch") }}
@@ -180,10 +197,10 @@ const { t, locale } = useI18n();
                     </p>
                 </div>
             </div>
-            <div class="pt-10 px-24 pb-24">
-                <div class="grid grid-cols-2 gap-10 items-center">
+            <div class="pt-10 xl:px-24 lg:px-16 px-6 pb-24">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
                     <Form
-                        class="bg-white text-start shadow-form rounded-[10px] pt-[52px] pb-11 px-10"
+                        class="bg-white text-start shadow-form rounded-[10px] pt-[52px] pb-11 sm:px-10 px-5"
                         @submit="onSubmit"
                         :validation-schema="schema"
                         id="MailSender"
@@ -264,6 +281,7 @@ const { t, locale } = useI18n();
                         </div>
                     </Form>
                     <img
+                        class="hidden md:block"
                         :src="[
                             locale === 'en'
                                 ? '/images/home/contact-l.svg'
